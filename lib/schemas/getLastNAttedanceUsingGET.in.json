@@ -1,0 +1,26 @@
+{
+    "type": "object",
+    "properties": {
+        "accessKey": {
+            "required": true,
+            "type": "string"
+        },
+        "secretKey": {
+            "required": true,
+            "type": "string"
+        },
+        "streamIds": {
+            "required": false,
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "count": {
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "default": 10
+        }
+    }
+}

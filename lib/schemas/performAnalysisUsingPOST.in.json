@@ -1,0 +1,81 @@
+{
+    "type": "object",
+    "properties": {
+        "accessKey": {
+            "required": true,
+            "type": "string"
+        },
+        "secretKey": {
+            "required": true,
+            "type": "string"
+        },
+        "storeAnalysisPicture": {
+            "required": false,
+            "type": "boolean",
+            "default": true
+        },
+        "storeFacePictures": {
+            "required": false,
+            "type": "boolean",
+            "default": true
+        },
+        "storeResult": {
+            "required": false,
+            "type": "boolean",
+            "default": true
+        },
+        "retentionTime": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "pictureURL": {
+            "required": false,
+            "type": "string"
+        },
+        "algorithmVersion": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "V1",
+                "V2"
+            ],
+            "default": "V2"
+        },
+        "autoRotate": {
+            "required": false,
+            "type": "boolean",
+            "default": false
+        },
+        "skipEXIF": {
+            "required": false,
+            "type": "boolean",
+            "default": false
+        },
+        "waitForPictureUpload": {
+            "required": false,
+            "type": "boolean",
+            "default": false
+        },
+        "filters": {
+            "required": false,
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "options": {
+            "required": false,
+            "type": "string"
+        },
+        "requestBody": {
+            "type": "object",
+            "properties": {
+                "picture": {
+                    "description": "The multipart/form-data version of the image, in case a direct upload is used. At least one of picture or pictureURL must be present",
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

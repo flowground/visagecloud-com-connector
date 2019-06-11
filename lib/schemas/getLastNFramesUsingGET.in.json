@@ -1,0 +1,51 @@
+{
+    "type": "object",
+    "properties": {
+        "accessKey": {
+            "required": true,
+            "type": "string"
+        },
+        "secretKey": {
+            "required": true,
+            "type": "string"
+        },
+        "streamId": {
+            "required": true,
+            "type": "string"
+        },
+        "count": {
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "default": 10
+        },
+        "collectionId": {
+            "required": false,
+            "type": "string"
+        },
+        "labels": {
+            "required": false,
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "attributeFilters": {
+            "required": false,
+            "type": "array",
+            "items": {
+                "enum": [
+                    "NO_FILTER",
+                    "GENDER_FILTER",
+                    "AGE_GROUP_FILTER"
+                ],
+                "type": "string"
+            },
+            "enum": [
+                "NO_FILTER",
+                "GENDER_FILTER",
+                "AGE_GROUP_FILTER"
+            ]
+        }
+    }
+}

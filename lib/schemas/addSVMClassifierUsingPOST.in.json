@@ -1,0 +1,98 @@
+{
+    "type": "object",
+    "properties": {
+        "accessKey": {
+            "required": true,
+            "type": "string"
+        },
+        "secretKey": {
+            "required": true,
+            "type": "string"
+        },
+        "name": {
+            "required": true,
+            "type": "string"
+        },
+        "collectionIds": {
+            "required": true,
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "preprocessor": {
+            "required": false,
+            "type": "string",
+            "default": "FeaturePreprocessor"
+        },
+        "classificationAttributeName": {
+            "required": true,
+            "type": "string"
+        },
+        "considerViewPoints": {
+            "required": false,
+            "type": "boolean",
+            "default": false
+        },
+        "seed": {
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "default": 179425537
+        },
+        "trainingRatio": {
+            "required": false,
+            "type": "number",
+            "format": "double",
+            "default": 0.8
+        },
+        "probabilityParameter": {
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "default": 1
+        },
+        "gammaParameter": {
+            "required": false,
+            "type": "number",
+            "format": "double",
+            "default": 0.5
+        },
+        "nuParameter": {
+            "required": false,
+            "type": "number",
+            "format": "double",
+            "default": 0.25
+        },
+        "cParameter": {
+            "required": false,
+            "type": "number",
+            "format": "double",
+            "default": 1
+        },
+        "svmTypeParameter": {
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "default": 0
+        },
+        "kernelTypeParameter": {
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "default": 0
+        },
+        "cacheSizeParameter": {
+            "required": false,
+            "type": "number",
+            "format": "double",
+            "default": 500
+        },
+        "epsParameter": {
+            "required": false,
+            "type": "number",
+            "format": "double",
+            "default": 0.001
+        }
+    }
+}

@@ -1,0 +1,43 @@
+{
+    "type": "object",
+    "properties": {
+        "accessKey": {
+            "required": true,
+            "type": "string"
+        },
+        "secretKey": {
+            "required": true,
+            "type": "string"
+        },
+        "streamIds": {
+            "required": false,
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "startDateTime": {
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+        },
+        "endDateTime": {
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+        },
+        "step": {
+            "required": false,
+            "type": "integer",
+            "format": "int64",
+            "default": 3600
+        },
+        "attributes": {
+            "required": true,
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        }
+    }
+}

@@ -1,0 +1,81 @@
+{
+    "type": "object",
+    "properties": {
+        "accessKey": {
+            "required": true,
+            "type": "string"
+        },
+        "secretKey": {
+            "required": true,
+            "type": "string"
+        },
+        "name": {
+            "required": true,
+            "type": "string"
+        },
+        "url": {
+            "required": true,
+            "type": "string"
+        },
+        "method": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "WEBRTC_PULL",
+                "WEBRTC_PUSH",
+                "INGESTION_ENDPOINT"
+            ],
+            "default": "WEBRTC_PUSH"
+        },
+        "username": {
+            "required": false,
+            "type": "string"
+        },
+        "password": {
+            "required": false,
+            "type": "string"
+        },
+        "skipFramesWithNoFaces": {
+            "required": false,
+            "type": "boolean",
+            "default": true
+        },
+        "retentionTime": {
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "default": 605000
+        },
+        "storeOriginalFrames": {
+            "required": false,
+            "type": "boolean",
+            "default": false
+        },
+        "storeAttendanceFaces": {
+            "required": false,
+            "type": "boolean",
+            "default": false
+        },
+        "storeAttendanceFrames": {
+            "required": false,
+            "type": "boolean",
+            "default": false
+        },
+        "isActive": {
+            "required": false,
+            "type": "boolean",
+            "default": false
+        },
+        "associatedCollections": {
+            "required": false,
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "attributes": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

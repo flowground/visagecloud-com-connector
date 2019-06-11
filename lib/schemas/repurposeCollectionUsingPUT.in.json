@@ -1,0 +1,34 @@
+{
+    "type": "object",
+    "properties": {
+        "accessKey": {
+            "required": true,
+            "type": "string"
+        },
+        "secretKey": {
+            "required": true,
+            "type": "string"
+        },
+        "collectionId": {
+            "required": true,
+            "type": "string"
+        },
+        "purposes": {
+            "required": true,
+            "type": "array",
+            "items": {
+                "enum": [
+                    "FEATURES",
+                    "LANDMARKS",
+                    "ATTRIBUTES"
+                ],
+                "type": "string"
+            },
+            "enum": [
+                "FEATURES",
+                "LANDMARKS",
+                "ATTRIBUTES"
+            ]
+        }
+    }
+}

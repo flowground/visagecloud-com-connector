@@ -1,0 +1,866 @@
+{
+    "title": "VisageCloud",
+    "description": "Face search, recognition & classification API. Just make a call to our REST API each time your app needs to access face recognition and classification capabilities.",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/visagecloud.com/1.1/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://visagecloud.com/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "getAccountByAccessKeyUsingGET": {
+            "main": "./lib/actions/getAccountByAccessKeyUsingGET.js",
+            "title": "Get account information by accessKey and secretKey",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getAccountByAccessKeyUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getBillingPerAccountUsingGET": {
+            "main": "./lib/actions/getBillingPerAccountUsingGET.js",
+            "title": "Get billing information by accessKey and secretKey",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getBillingPerAccountUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "changePasswordUsingPOST": {
+            "main": "./lib/actions/changePasswordUsingPOST.js",
+            "title": "Change password for an account using old password",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/changePasswordUsingPOST.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "loginWithEmailUsingPOST": {
+            "main": "./lib/actions/loginWithEmailUsingPOST.js",
+            "title": "Get account information including accessKey and secretKey by email and password",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/loginWithEmailUsingPOST.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "compareFacesUsingGET": {
+            "main": "./lib/actions/compareFacesUsingGET.js",
+            "title": "Compare several faces identified by faceHash, without depending on mapping faces to profiles",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/compareFacesUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "performAnalysisUsingPOST": {
+            "main": "./lib/actions/performAnalysisUsingPOST.js",
+            "title": "Perform detection on a given picture or picture URL",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/performAnalysisUsingPOST.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "retriveLatestUsingGET": {
+            "main": "./lib/actions/retriveLatestUsingGET.js",
+            "title": "Retrieve the last *count* operations per current account",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/retriveLatestUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "performRecognitionUsingPOST": {
+            "main": "./lib/actions/performRecognitionUsingPOST.js",
+            "title": "Perform labeled recognition on a given picture or picture URL",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/performRecognitionUsingPOST.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "retrieveAnalysisUsingGET": {
+            "main": "./lib/actions/retrieveAnalysisUsingGET.js",
+            "title": "Retrieve a complete analysis object including both detection and recognition information",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/retrieveAnalysisUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "counterUsingPOST": {
+            "main": "./lib/actions/counterUsingPOST.js",
+            "title": "Count individuals in streams or collections",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/counterUsingPOST.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "presenceTimeseriesUsingPOST": {
+            "main": "./lib/actions/presenceTimeseriesUsingPOST.js",
+            "title": "Show audience (based on number of occurrences of each person) breakdown per declared attribute (age, gender).",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/presenceTimeseriesUsingPOST.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "presenceTotalUsingPOST": {
+            "main": "./lib/actions/presenceTotalUsingPOST.js",
+            "title": "Show presence (based on number of occurences of each face) breakdown per declared attribute (age, gender)",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/presenceTotalUsingPOST.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "removeClassiferUsingDELETE": {
+            "main": "./lib/actions/removeClassiferUsingDELETE.js",
+            "title": "Delete existing classifier",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/removeClassiferUsingDELETE.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getClassiferFullUsingGET": {
+            "main": "./lib/actions/getClassiferFullUsingGET.js",
+            "title": "Get classifier full",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getClassiferFullUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "addSVMClassifierUsingPOST": {
+            "main": "./lib/actions/addSVMClassifierUsingPOST.js",
+            "title": "Create new SVM classifier with given name",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/addSVMClassifierUsingPOST.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getClassiferStatusUsingGET": {
+            "main": "./lib/actions/getClassiferStatusUsingGET.js",
+            "title": "Get classifer status",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getClassiferStatusUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getAllCollectionsUsingGET": {
+            "main": "./lib/actions/getAllCollectionsUsingGET.js",
+            "title": "Retrieve all collections",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getAllCollectionsUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "addCollectionUsingPOST": {
+            "main": "./lib/actions/addCollectionUsingPOST.js",
+            "title": "Create new empty collection with given name",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/addCollectionUsingPOST.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getAllCollections2UsingGET": {
+            "main": "./lib/actions/getAllCollections2UsingGET.js",
+            "title": "Retrieve all collections",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getAllCollections2UsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "deleteCollection2UsingDELETE": {
+            "main": "./lib/actions/deleteCollection2UsingDELETE.js",
+            "title": "Delete existing collection with associated profiles and faces.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteCollection2UsingDELETE.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getCollection2UsingGET": {
+            "main": "./lib/actions/getCollection2UsingGET.js",
+            "title": "Retrieve existing collection content",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getCollection2UsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "addCollection2UsingPOST": {
+            "main": "./lib/actions/addCollection2UsingPOST.js",
+            "title": "Create new empty collection with given name",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/addCollection2UsingPOST.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "exportCSVUsingGET": {
+            "main": "./lib/actions/exportCSVUsingGET.js",
+            "title": "Retrieve collection content for data analysis.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/exportCSVUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "repurposeCollectionUsingPUT": {
+            "main": "./lib/actions/repurposeCollectionUsingPUT.js",
+            "title": "Change purpose of existing collection",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/repurposeCollectionUsingPUT.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "deleteCollectionUsingDELETE": {
+            "main": "./lib/actions/deleteCollectionUsingDELETE.js",
+            "title": "Delete existing collection with associated profiles and faces.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteCollectionUsingDELETE.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getCollectionUsingGET": {
+            "main": "./lib/actions/getCollectionUsingGET.js",
+            "title": "Retrieve existing collection content",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getCollectionUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "updateCollectionUsingPATCH": {
+            "main": "./lib/actions/updateCollectionUsingPATCH.js",
+            "title": "Update an existing collection with a given id",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/updateCollectionUsingPATCH.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "updateCollection2UsingPOST": {
+            "main": "./lib/actions/updateCollection2UsingPOST.js",
+            "title": "Update an existing collection with a given id",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/updateCollection2UsingPOST.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getAllCollectionProfilesUsingGET": {
+            "main": "./lib/actions/getAllCollectionProfilesUsingGET.js",
+            "title": "Gets all the profiles associated to a collection",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getAllCollectionProfilesUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "removeClassificationAttributesFromProfileUsingDELETE": {
+            "main": "./lib/actions/removeClassificationAttributesFromProfileUsingDELETE.js",
+            "title": "Removes classification attributes from a profile",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/removeClassificationAttributesFromProfileUsingDELETE.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getClassificationAttributesFromProfileUsingGET": {
+            "main": "./lib/actions/getClassificationAttributesFromProfileUsingGET.js",
+            "title": "Gets classification attributes from a profile",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getClassificationAttributesFromProfileUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "mapClassificationAttributesToProfileUsingPUT": {
+            "main": "./lib/actions/mapClassificationAttributesToProfileUsingPUT.js",
+            "title": "Maps classification attributes to a profile",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/mapClassificationAttributesToProfileUsingPUT.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getProfileEnrollmentStatusUsingGET": {
+            "main": "./lib/actions/getProfileEnrollmentStatusUsingGET.js",
+            "title": "Gets the enrollment status of a profile: information on whether it is suitable for authentication.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getProfileEnrollmentStatusUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "removeFacesFromProfileUsingDELETE": {
+            "main": "./lib/actions/removeFacesFromProfileUsingDELETE.js",
+            "title": "Removes (unmaps) a list of faces, identified by faceHashes, from a profile, identified by profileId",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/removeFacesFromProfileUsingDELETE.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getFacesFromProfileUsingGET": {
+            "main": "./lib/actions/getFacesFromProfileUsingGET.js",
+            "title": "Gets all the faceHashes associated to a profile",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getFacesFromProfileUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "mapFacesToProfileUsingPOST": {
+            "main": "./lib/actions/mapFacesToProfileUsingPOST.js",
+            "title": "Adds (maps) a list of faces, identified by faceHashes, to a profile, identified by profileId",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/mapFacesToProfileUsingPOST.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "deleteProfile2UsingDELETE": {
+            "main": "./lib/actions/deleteProfile2UsingDELETE.js",
+            "title": "Deletes a profile and unmaps all its faces",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteProfile2UsingDELETE.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "addProfileUsingPOST": {
+            "main": "./lib/actions/addProfileUsingPOST.js",
+            "title": "Creates a new profile with no faces associated to it (empty profile)",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/addProfileUsingPOST.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "deleteProfileUsingDELETE": {
+            "main": "./lib/actions/deleteProfileUsingDELETE.js",
+            "title": "Deletes a profile and unmaps all its faces",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteProfileUsingDELETE.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getProfileUsingGET": {
+            "main": "./lib/actions/getProfileUsingGET.js",
+            "title": "Retrieves a profile",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getProfileUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "updateProfileUsingPATCH": {
+            "main": "./lib/actions/updateProfileUsingPATCH.js",
+            "title": "Update an existing profile with a given id",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/updateProfileUsingPATCH.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "streamsByAccountUsingGET": {
+            "main": "./lib/actions/streamsByAccountUsingGET.js",
+            "title": "Show status of all streams from account",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/streamsByAccountUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getLastNAttedanceUsingGET": {
+            "main": "./lib/actions/getLastNAttedanceUsingGET.js",
+            "title": "Get last N recognized individuals from stream",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getLastNAttedanceUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "cleanupStreamUsingPATCH": {
+            "main": "./lib/actions/cleanupStreamUsingPATCH.js",
+            "title": "Cleanup frames older than specified timeframe",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/cleanupStreamUsingPATCH.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getFrameImageUsingGET": {
+            "main": "./lib/actions/getFrameImageUsingGET.js",
+            "title": "Get individual frame image",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getFrameImageUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getLastNFramesUsingGET": {
+            "main": "./lib/actions/getLastNFramesUsingGET.js",
+            "title": "Get last processed N frames from stream",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getLastNFramesUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "startStreamUsingPATCH": {
+            "main": "./lib/actions/startStreamUsingPATCH.js",
+            "title": "Start existing stream",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/startStreamUsingPATCH.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "stopStreamUsingPATCH": {
+            "main": "./lib/actions/stopStreamUsingPATCH.js",
+            "title": "Stop existing stream",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/stopStreamUsingPATCH.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "addStreamUsingPOST": {
+            "main": "./lib/actions/addStreamUsingPOST.js",
+            "title": "Create new stream with given name",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/addStreamUsingPOST.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "removeStreamUsingDELETE": {
+            "main": "./lib/actions/removeStreamUsingDELETE.js",
+            "title": "Delete existing stream",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/removeStreamUsingDELETE.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getStreamUsingGET": {
+            "main": "./lib/actions/getStreamUsingGET.js",
+            "title": "Get an existing stream with a given ID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getStreamUsingGET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "updateStreamUsingPATCH": {
+            "main": "./lib/actions/updateStreamUsingPATCH.js",
+            "title": "Update an existing stream with a given ID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/updateStreamUsingPATCH.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,52 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "type": "object",
+            "properties": {
+                "accessKey": {
+                    "description": "The accessKey provided by VisageCloud",
+                    "type": "string"
+                },
+                "secretKey": {
+                    "description": "The secretKey provided by VisageCloud",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "The name of the collection that will be created",
+                    "type": "string"
+                },
+                "preload": {
+                    "description": "Defined whether to preload collection",
+                    "type": "boolean",
+                    "default": false
+                },
+                "evictable": {
+                    "description": "Defined whether the collection can be evicted",
+                    "type": "boolean",
+                    "default": true
+                },
+                "purposes": {
+                    "description": "The newly declared purposes of the collection",
+                    "type": "array",
+                    "enum": [
+                        "FEATURES",
+                        "LANDMARKS",
+                        "ATTRIBUTES"
+                    ],
+                    "items": {
+                        "enum": [
+                            "FEATURES",
+                            "LANDMARKS",
+                            "ATTRIBUTES"
+                        ],
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "accessKey"
+            ]
+        }
+    }
+}

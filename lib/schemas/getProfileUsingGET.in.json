@@ -1,0 +1,26 @@
+{
+    "type": "object",
+    "properties": {
+        "accessKey": {
+            "required": true,
+            "type": "string"
+        },
+        "secretKey": {
+            "required": true,
+            "type": "string"
+        },
+        "collectionId": {
+            "required": true,
+            "type": "string"
+        },
+        "withFaces": {
+            "required": false,
+            "type": "string",
+            "default": "false"
+        },
+        "id": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

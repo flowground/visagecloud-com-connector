@@ -1,0 +1,27 @@
+{
+    "type": "object",
+    "properties": {
+        "accessKey": {
+            "required": true,
+            "type": "string"
+        },
+        "secretKey": {
+            "required": true,
+            "type": "string"
+        },
+        "startDateTime": {
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+        },
+        "endDateTime": {
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+        },
+        "dateTemplate": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

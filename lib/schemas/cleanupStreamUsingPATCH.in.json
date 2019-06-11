@@ -1,0 +1,22 @@
+{
+    "type": "object",
+    "properties": {
+        "accessKey": {
+            "required": true,
+            "type": "string"
+        },
+        "secretKey": {
+            "required": true,
+            "type": "string"
+        },
+        "streamId": {
+            "required": true,
+            "type": "string"
+        },
+        "interval": {
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+        }
+    }
+}

@@ -1,0 +1,44 @@
+{
+    "type": "object",
+    "properties": {
+        "accessKey": {
+            "required": true,
+            "type": "string"
+        },
+        "secretKey": {
+            "required": true,
+            "type": "string"
+        },
+        "collectionName": {
+            "required": true,
+            "type": "string"
+        },
+        "preload": {
+            "required": false,
+            "type": "boolean",
+            "default": false
+        },
+        "evictable": {
+            "required": false,
+            "type": "boolean",
+            "default": true
+        },
+        "purposes": {
+            "required": false,
+            "type": "array",
+            "items": {
+                "enum": [
+                    "FEATURES",
+                    "LANDMARKS",
+                    "ATTRIBUTES"
+                ],
+                "type": "string"
+            },
+            "enum": [
+                "FEATURES",
+                "LANDMARKS",
+                "ATTRIBUTES"
+            ]
+        }
+    }
+}

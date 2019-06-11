@@ -1,0 +1,109 @@
+{
+    "type": "object",
+    "properties": {
+        "accessKey": {
+            "required": true,
+            "type": "string"
+        },
+        "secretKey": {
+            "required": true,
+            "type": "string"
+        },
+        "storeAnalysisPicture": {
+            "required": false,
+            "type": "boolean",
+            "default": true
+        },
+        "storeFacePictures": {
+            "required": false,
+            "type": "boolean",
+            "default": true
+        },
+        "storeResult": {
+            "required": false,
+            "type": "boolean",
+            "default": true
+        },
+        "retentionTime": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "collectionId": {
+            "required": true,
+            "type": "string"
+        },
+        "labels": {
+            "required": false,
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "attributeFilters": {
+            "required": false,
+            "type": "array",
+            "items": {
+                "enum": [
+                    "NO_FILTER",
+                    "GENDER_FILTER",
+                    "AGE_GROUP_FILTER"
+                ],
+                "type": "string"
+            },
+            "enum": [
+                "NO_FILTER",
+                "GENDER_FILTER",
+                "AGE_GROUP_FILTER"
+            ]
+        },
+        "pictureURL": {
+            "required": false,
+            "type": "string"
+        },
+        "algorithmVersion": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "V1",
+                "V2"
+            ],
+            "default": "V2"
+        },
+        "autoRotate": {
+            "required": false,
+            "type": "boolean",
+            "default": false
+        },
+        "waitForPictureUpload": {
+            "required": false,
+            "type": "boolean",
+            "default": false
+        },
+        "filters": {
+            "required": false,
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "options": {
+            "required": false,
+            "type": "string"
+        },
+        "requestBody": {
+            "type": "object",
+            "properties": {
+                "picture": {
+                    "description": "The picture itself",
+                    "type": "string"
+                }
+            }
+        },
+        "skipEXIF_rotation_processing": {
+            "required": false,
+            "type": "boolean",
+            "default": false
+        }
+    }
+}

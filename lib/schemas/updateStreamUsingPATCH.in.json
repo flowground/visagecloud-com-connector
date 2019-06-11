@@ -1,0 +1,78 @@
+{
+    "type": "object",
+    "properties": {
+        "accessKey": {
+            "required": true,
+            "type": "string"
+        },
+        "secretKey": {
+            "required": true,
+            "type": "string"
+        },
+        "streamId": {
+            "required": true,
+            "type": "string"
+        },
+        "name": {
+            "required": false,
+            "type": "string"
+        },
+        "url": {
+            "required": false,
+            "type": "string"
+        },
+        "method": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "WEBRTC_PULL",
+                "WEBRTC_PUSH",
+                "INGESTION_ENDPOINT"
+            ]
+        },
+        "username": {
+            "required": false,
+            "type": "string"
+        },
+        "password": {
+            "required": false,
+            "type": "string"
+        },
+        "skipFramesWithNoFaces": {
+            "required": false,
+            "type": "boolean"
+        },
+        "retentionTime": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "storeOriginalFrames": {
+            "required": false,
+            "type": "boolean"
+        },
+        "storeAttendanceFaces": {
+            "required": false,
+            "type": "boolean"
+        },
+        "storeAttendanceFrames": {
+            "required": false,
+            "type": "boolean"
+        },
+        "isActive": {
+            "required": false,
+            "type": "boolean"
+        },
+        "associatedCollections": {
+            "required": false,
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "attributes": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

@@ -1,0 +1,44 @@
+{
+    "type": "object",
+    "properties": {
+        "accessKey": {
+            "required": true,
+            "type": "string"
+        },
+        "secretKey": {
+            "required": true,
+            "type": "string"
+        },
+        "id": {
+            "required": true,
+            "type": "string"
+        },
+        "collectionId": {
+            "required": true,
+            "type": "string"
+        },
+        "externalId": {
+            "required": false,
+            "type": "string"
+        },
+        "screenName": {
+            "required": false,
+            "type": "string"
+        },
+        "labels": {
+            "required": false,
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "classificationAttributes": {
+            "required": false,
+            "type": "string"
+        },
+        "details": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

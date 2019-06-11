@@ -1,0 +1,25 @@
+{
+    "type": "object",
+    "properties": {
+        "accessKey": {
+            "required": true,
+            "type": "string"
+        },
+        "secretKey": {
+            "required": true,
+            "type": "string"
+        },
+        "faceHashes": {
+            "required": true,
+            "type": "string"
+        },
+        "profileId": {
+            "required": true,
+            "type": "string"
+        },
+        "collectionId": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}
